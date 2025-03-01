@@ -1,112 +1,68 @@
-
-body {
-  background-color: #000;
-  color: #fff;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  height: 100vh;
-  font-family: Arial, sans-serif;
-}
-
-#tree-view {
-  width: 50%;
-  border-right: 1px solid #444;
-  display: flex;
-  flex-direction: column;
-  background-color: #000;
-}
-
-#logs {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  background-color: #000;
-}
-
-#tree-logs {
-  flex: 1;
-  border-bottom: 1px solid #444;
-  overflow-y: auto;
-}
-
-#network-logs {
-  flex: 1;
-  overflow-y: auto;
-}
-
-h3 {
-  margin: 10px 0;
-  font-size: 16px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-}
-
-h3 button {
-  margin-left: 10px;
-  cursor: pointer;
-  border: 1px solid #666;
-  background: #333;
-  padding: 3px 8px;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  color: #fff;
-}
-
-h3 button img {
-  width: 16px;
-  height: 16px;
-  margin-left: 5px;
-}
-
-#file-tree {
-  border: 1px solid #444;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px;
-  background-color: #000;
-}
-
-ul {
-  list-style: none;
-  padding-left: 10px;
-  margin: 0;
-  color: #fff;
-}
-
-ul li {
-  margin: 5px 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-ul li .icon {
-  width: 16px;
-  height: 16px;
-  margin-right: 5px;
-}
-
-ul li span {
-  margin: 0;
-  color: #fff;
-}
-
-.line {
-  border-left: 1px solid #444;
-  margin-left: 20px;
-  padding-left: 10px;
-  display: block;
-  color: #fff;
-}
-
-.log-entry {
-  margin-bottom: 5px;
-  font-size: 14px;
-  color: #fff;
-  white-space: pre-wrap;
-}
+.tree-container {
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+    height: 90%;
+    font-family: Consolas, "Courier New", monospace;
+    overflow-y: auto;
+  }
+  
+  .tree-list {
+    list-style: none;
+    padding-left: 0;
+  }
+.tree-item {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .tree-row {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .tree-row:hover {
+    background-color: #e3f2fd;
+  }
+  
+  .tree-row.directory {
+    font-weight: bold;
+    /* color: #f0a500;  */
+  }
+  
+  .tree-icon {
+    margin-right: 8px;
+  }
+  
+  .tree-label {
+    flex-grow: 1;
+  }
+  
+  .action-icons {
+    display: none;
+  }
+  
+  .tree-row:hover .action-icons {
+    display: flex;
+  }
+  
+  .icon {
+    margin-left: 8px;
+    cursor: pointer;
+  }
+  
+  .icon:hover {
+    color: gray;
+  }
+  
+  .tree-children {
+    margin-left: 20px;
+    border-left: 1px solid #555;
+    padding-left: 10px;
+  }
+  
