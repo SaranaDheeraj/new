@@ -6,7 +6,7 @@ import LogPanel from "./LogPanel";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-const API_BASE = "http://13.239.133.196:5333";
+const API_BASE = "http://3.27.213.223:5333";
 
 
 function App() {
@@ -163,11 +163,20 @@ function App() {
     };
   }, []);
 
+
   return (
     <div className="d-flex vh-100 p-4 gap-4 bg-dark justify-content-center">
+
       {/* Left panel: File Tree */}
       <div className="col-4 bg-light p-4 rounded shadow">
         <h3 className="mb-3">Tree View</h3>
+        <button className="btn btn-primary mb-3" onClick={handleUpload}>Upload File</button>
+        <input 
+          type="file" 
+          ref={fileInputRef} 
+          style={{ display: "none" }} 
+          onChange={onFileSelected} 
+        />
         <FileTree
           tree={tree}
           openFolders={openFolders}
