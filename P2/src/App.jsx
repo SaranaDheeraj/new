@@ -95,11 +95,17 @@ function App() {
   };
 
   const handleUpload = (path) => {
+    if (!path) {
+      alert("Invalid upload path.");
+      return;
+    }
     setUploadPath(path);
     if (fileInputRef.current) {
       fileInputRef.current.click();
     }
   };
+  
+
 
   const onFileSelected = async (e) => {
     const file = e.target.files[0];
